@@ -41,7 +41,10 @@ function browsersync() {
 	browserSync.init({
 		server: {
 			baseDir: "app/"
-		}
+		},
+		online: true,
+		tunnel: 'access-phone',
+		notify: false
 	});
 }
 function styles() {
