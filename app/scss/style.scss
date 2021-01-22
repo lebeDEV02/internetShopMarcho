@@ -383,4 +383,108 @@
 		@extend %btn;
 	}
 }
+
+.product{
+	padding: 110px 0;
+	text-align: center;
+	&__items{
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 45px 30px;
+	}
+	&__link{
+		text-transform: uppercase;
+		color: $title;
+		display: inline-block;
+		border: 1px solid $accent;
+		padding: 14px 27px;
+		margin-top: 55px;
+	}
+}
+.product-item{
+	max-width: 370px;
+	&__img-box{
+		position: relative;
+		height: 370px;
+		overflow: hidden;
+	}
+	&__link-box{
+		position: absolute;
+		bottom: 30px;
+		background-color: #fff;
+		left: 50%;
+		transform: translate(-50%, 300%);
+		border-radius: 25px;
+		box-shadow: 0px 5px 30px 0px rgba(152, 152, 152, 0.2);
+		display: flex;
+		transition: all .3s;	
+		margin-bottom: 25px;
+	}
+	&__link{
+		padding: 15px 27px 10px;
+		path{
+		transition: all .3s;
+		}
+	}
+	&__link--central::before,
+	&__link--central::after{
+		content: '';
+		position: absolute;
+		height: 30px;
+		width: 1px;
+		background-color: #ececec;
+		top: 10px;
+	}
+	&__link--central::before{
+		left: 70px;
+	}
+	&__link--central::after{
+		right: 70px;
+	}
+	&__link:hover{
+		path{
+			fill: $accent;
+		}
+	}
+	&__images{
+		object-fit: cover;
+	}
+	&:hover{
+		.product-item__link-box{
+			transform: translate(-50%,0%);
+		}
+	}
+	&__title{
+		color: $title;
+		margin: 15px 0 20px;
+	}
+	&__price{
+		display: flex;
+		justify-content: center;
+		@extend %roboto-400;
+	}
+	&__new-price{
+		padding: 0 12px;
+		color: $title;
+	}
+	&__old-price{
+		padding: 0 12px;
+		color: $default;
+		text-decoration: line-through;
+	}
+	&--sale{
+		.product-item__img-box::before{
+			content: 'SALE';
+			@extend %btn;
+			position: absolute;
+			left: 25px;
+			top: 25px;
+			line-height: 1;
+			    padding: 8px 11px;
+		}
+	}
+}
+.star{
+	margin: 30px auto 0;
+}
 @import 'media';
