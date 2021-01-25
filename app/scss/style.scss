@@ -157,7 +157,17 @@
 		margin-left: 20px;
 	}
 }	
-
+.top{
+	&__container{
+		max-width: 1700px;
+		margin: 0 auto;
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: top center;
+		padding: 120px 0 130px;
+		text-align: center;
+	}
+}
 .top-slider{
 	background-image: url('../images/decor/slider-top-bg.png');
 	background-repeat: no-repeat;
@@ -634,16 +644,6 @@
 		position: absolute;
 		}
 	}
-}
-.BG {
-  background-color: rgb(255, 255, 255);
-  box-shadow: 20px 0px 60px 0px rgba(202, 202, 202, 0.35);
-  position: absolute;
-  left: 375px;
-  top: 5688px;
-  width: 370px;
-  height: 478px;
-  z-index: 115;
 }
 
 @import 'media';
