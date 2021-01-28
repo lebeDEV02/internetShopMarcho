@@ -85,3 +85,47 @@ a{
 .header--404-page{
 	background-color: $bg;
 }
+.pagination{
+	display: flex;
+	justify-content: center;
+	padding: 30px 0px;
+	&__list{
+		display: flex;
+	}
+	&__arrow{
+		text-transform: uppercase;
+		position: relative;
+		&::before{
+			content: '';
+			position: absolute;
+			background-repeat: no-repeat;
+			width: 5px;
+			height: 10px;
+			top: 8px;
+		}
+	}
+	&__prev{
+		padding-left: 15px;
+		margin-right: 50px;
+		&::before{
+			background-image: url('../images/icons/angle-left.svg');
+			left: 0;
+		}
+	}
+	&__next{
+		padding-right: 15px;
+		margin-left: 50px;
+		&::before{
+			background-image: url('../images/icons/angle-right.svg');
+			right: 0;
+		}
+	}
+	&__item{
+		&+&{
+			margin-left: 30px;
+	}
+}
+	&__link--active{
+		color: $accent;
+	}
+}

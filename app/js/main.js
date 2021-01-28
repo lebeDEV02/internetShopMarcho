@@ -12,6 +12,17 @@ $(function () {
 		},
 
 	});
+	$('.button-list').on('click', function () {
+		$('.product-item').addClass('product-item--list')
+	});
+	$('.button-grid').on('click', function () {
+		$('.product-item').removeClass('product-item--list')
+	});
+	$('.shop-content__filter-btn').on('click', function () {
+		$('.shop-content__filter-btn').removeClass('shop-content__filter-btn--active');
+		$(this).addClass('shop-content__filter-btn--active');
+	});
+	$('.select-style').styler();
 	$('.top-slider__inner').slick({
 		dots: true,
 		arrows: false,
