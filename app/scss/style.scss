@@ -413,6 +413,80 @@
 }
 .product-item{
 	max-width: 370px;
+	text-align: center;
+	&.product-item--list{
+		min-width: 100%;
+		display: flex;
+		text-align: left;
+		.product-item__img-box{
+			height: 250px;
+			min-width: 200px;
+			margin-bottom: 0;
+			img{
+				height: 250px;
+			}
+		}
+		.product-item__link-box{
+			box-shadow: none;
+			background-color: transparent;
+			bottom: auto;
+			width: 115px;
+			justify-content: space-between;
+			top: 50%;
+			.product-item__link{
+				justify-content: center;
+				align-items: center;
+				background-color: #fff;
+				width: 50px;
+				height: 50px;
+				border-radius: 50%;
+				display: flex;
+				padding: 0;
+			}
+			.product-item__link--central{
+				display: none;
+			}
+		}
+		.product-item__content-box{
+			display: block;
+		}
+		.product-item__wrapper-box{
+			padding: 30px 40px;
+			border: 1px solid #ececec;
+			border-left: none;
+		}
+		.product-item__box{
+			display: flex;
+			flex-wrap: wrap;
+		}
+		.product-item__title{
+			order: -1;
+			width: 100%;
+			margin: 0 0 10px;
+		}
+		.product-item__price{
+			order: -1;
+			margin-left: -12px;
+		}
+		.star{
+			margin: 0 0 0 23px;
+		}
+		.product-item__text{
+			margin-bottom: 25px;
+		}
+		.product-item__btn{
+			padding: 11px 40px;
+			background-color: $title;
+			border: none;
+			color: #fff;
+			cursor: pointer;
+			transition: all .3s;
+			&:hover{
+				background-color: $accent;
+				box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+			}
+		}
+	}
 	&__img-box{
 		position: relative;
 		height: 370px;
@@ -492,6 +566,9 @@
 			line-height: 1;
 			    padding: 8px 11px;
 		}
+	}
+	&__content-box{
+		display: none;
 	}
 }
 .star{
@@ -667,9 +744,6 @@
 		color: $accent;
 
 	}
-	&__label{
-
-	}
 	&__input{
 		display: block;
 		width: 100%;
@@ -783,9 +857,6 @@
 		align-items: center;
 		padding-top: 30px;
 	}
-	span{
-
-	}
 	&__btn{
 		@extend %btn;
 		border: none;
@@ -891,6 +962,7 @@
 		padding-left: 35px;
 		margin-bottom: 20px;
 		display: block;
+		cursor: pointer;
 	}
 	&__checkbox{
 		width: 20px;
@@ -901,5 +973,115 @@
 		border-radius: 50%;
 		margin-top: 3px;
 	}
+}
+.filter-category{
+	&__label{
+		margin-bottom: 15px;
+		display: block;
+				cursor: pointer;
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+	&__input{
+		@extend %checkbox-hidden;
+		&:checked + .filter-category__checkbox{
+			background-color: $accent;
+			color: #fff;
+		}
+	}
+	&__checkbox{
+		background-color: $bg;
+		color: $title;
+		display: flex;
+		justify-content: space-between;
+		padding: 16px 20px;
+	}
+}
+.filter-popular{
+	&__label{
+		display: inline-block;
+		margin-bottom: 20px;
+		margin-right: 8px;
+		padding: 10px 0;
+		cursor: pointer;
+	}
+	&__name{
+		@extend %checkbox-hidden;
+		&:checked + .filter-popular__checkbox{
+			background-color: $accent;
+			color: #fff;
+			border-color: $accent;
+		}
+	}
+	&__checkbox{
+		background-color: $bg;
+		border: 1px solid $default;
+		padding: 10px 20px;
+	}
+}
+.shop-content{
+	width: 100%;
+	&__filter{
+		border: 1px solid #ececec;
+		padding: 20px 25px 20px 30px;
+		margin-bottom: 40px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__inner{
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		border-bottom: 1px solid #ececec;
+		.product-item{
+			margin-bottom: 40px;
+		}
+	}
+	&__filter-buttons{
+		display: flex;
+		align-items: center;
+	}
+	&__filter-btn{
+		outline: none;
+		padding: 0;
+		border: none;
+		background-color: transparent;
+		margin-left: 15px;
+		line-height: 0;
+		cursor: pointer;
+		&.shop-content__filter-btn--active{
+			path{
+				fill: $accent;
+			}
+		}
+	}
+	.jq-selectbox__select {
+	 height: 32px;
+	 margin-left: 30px;
+    padding-right: 30px;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    @extend %quicksand-500;
+    color: $default;
+	 text-shadow: none;
+	 &:hover{
+		 background-color: transparent;
+	 }
+	 .jq-selectbox__trigger {
+		 border-left: none;
+		 .jq-selectbox__trigger-arrow {
+   		 position: absolute;
+   		 top: 14px;
+   		 right: 12px;
+   		 width: 10px;
+   		 height: 5px;
+   		 border: none;
+			 background-image: url('../images/icons/angle-down.svg');
+			}
+	 }
+}
 }
 @import 'media';
