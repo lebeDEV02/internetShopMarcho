@@ -47,8 +47,6 @@ function browsersync() {
 		server: {
 			baseDir: "app/"
 		},
-		online: true,
-		tunnel: 'access-phone',
 		notify: false
 	});
 }
