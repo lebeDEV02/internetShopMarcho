@@ -23,6 +23,7 @@ $bg: #f6f6f6;
 	text-transform: uppercase;
 	color: #fff;
 	background-color: $accent;
+	cursor: poiner;
 	@extend %roboto-400;
 	box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
 }
