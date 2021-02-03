@@ -1385,7 +1385,7 @@
 	margin-bottom: 40px;
 	display: flex;
 	&__img{
-		width: 70px;
+		min-width: 70px;
 		height: 70px;
 		border-radius: 50%;
 		margin-right: 30px;
@@ -1710,5 +1710,246 @@
 			top: 5px;
 		}
 	}
+}
+.blog-one{
+
+	&__text{
+		border: 1px solid #ececec;
+		border-top: none;
+		padding: 30px;
+		margin-top: -1px;
+			h4{
+		color: $title;
+		font-size: 22px;
+		@extend %roboto-700;
+		margin: 25px 0;
+	}
+	p{
+		margin: 25px 0;
+	}
+	blockquote{
+		background-color: $bg;
+		border-left: 3px solid $accent;
+		padding: 35px;
+		color: $title;
+		font-size: 22px;
+		@extend %roboto-400;
+		margin: 25px 0;
+	}
+	}
+	&__info{
+		display: flex;
+		margin-bottom: 25px;
+	}
+	&__info-link{
+		padding-left: 28px;
+		margin-right: 30px;
+		position: relative;
+		&::before{
+			content:'';
+			position: absolute;
+			left: 0;
+			top: 3px;
+			width: 20px;
+			height: 20px;
+			background-repeat: no-repeat;
+			background-image: url('../images/icons/calendar.svg');
+			path{
+				fill: $accent;
+			}
+		}
+	}
+	&__info-link--comment{
+		&::before{
+			background-image: url('../images/icons/comment.svg');
+		}
+	}
+	&__info-link--author{
+				&::before{
+			background-image: url('../images/icons/user-accent.svg');
+		}
+	}
+	&__left-img{
+		float: left;
+		margin-right: 30px;
+		margin-bottom: 10px;
+	}
+	&__right-img{
+		float: right;
+		margin-left: 30px;
+		margin-bottom: 10px;
+	}
+	&__form-title{
+		text-transform: uppercase;
+		margin: 35px 0 25px;
+		font-size: 24px;
+		color: $title;
+		@extend %roboto-700;
+	}
+	.comment-add{
+		border-bottom: none;
+			&__name{
+		margin-right: 30px;
+	}
+	}
+	&__box{
+		margin: 25px 0 35px;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	&__tags, &__share{
+		span{
+			text-transform: uppercase;
+			color: $title;
+			@extend %roboto-700
+			}
+	}
+	&__share{
+		a{
+			margin-right: 12px;
+			vertical-align: middle;
+			path{
+				transition: all .3s;
+				fill: #727272;
+			}
+			&:hover{
+				path{
+					fill: $accent;
+				}
+			}
+		}
+	}
+	&__author{
+		border-bottom: 1px solid #ececec;
+		padding-bottom: 40px;
+		margin-bottom: 40px;
+		display: flex;
+	}
+	&__author-img{
+		width: 140px;
+		height: 140px;
+		margin-right: 30px;
+		object-fit: cover;
+	}
+	&__author-name{
+		margin-bottom: 24px;
+		font-size: 22px;
+		color: $title;
+		@extend %roboto-700;
+	}
+	.comment-title{
+		font-size: 24px;
+		@extend %roboto-700;
+		margin-bottom: 25px;
+		color: $title;
+		text-transform: uppercase;
+	}
+}
+.map{
+	padding: 120px 0;
+}
+.contact{
+	padding-bottom: 120px;
+	&__inner{
+		display: flex;
+	}
+	&__info{
+		max-width: 370px;
+		width: 100%;
+		margin-right: 30px;
+	}
+	&__info-title{
+		color: $title;
+		font-size: 48px;
+		@extend %roboto-700;
+		line-height: 58px;
+		margin-bottom: 20px;
+	}
+	&__info-text{
+		margin-bottom: 60px;
+	}
+	&__info-item{
+		color: $title;
+		padding-left: 80px;
+		position: relative;
+		&::before{
+			content:'';
+			position: absolute;
+			left: 0;
+			top: -5px;
+			width: 60px;
+			height: 60px;
+			box-shadow: 0px 5px 20px 0px rgba(146, 146, 146, 0.3);
+		}
+		&::after{
+			content: '';
+			position: absolute;
+			background-image: url('../images/icons/phone.svg');
+			width: 20px;
+			height: 20px;
+			left: 0;
+			right: 0;
+			left: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			background-repeat: no-repeat;
+		}
+		&+&{
+			margin-top: 55px;
+		}
+	}
+	&__info-phone{
+		color: inherit;
+		display: block;
+	}
+		&__info-item--location{
+			&::after{
+				background-image: url('../images/icons/location.svg');
+				width: 14px;
+				left: 23px;
+			}
+	}
+	&__info-item--mail{
+		&::after{
+			background-image: url('../images/icons/mail.svg');
+			width: 18px;
+			left: 21px;
+		}
+	}
+	&__form{
+		max-width: 770px;
+		width: 100%;
+		  box-shadow: 0px 10px 40px 0px rgba(172, 172, 172, 0.3);
+		  padding: 60px 40px;
+		  input,
+		  textarea{
+			  background-color: $bg;
+		  }
+	}
+	.blog-one__form-title{
+		font-size: 22px;
+		@extend %roboto-700;
+		margin-bottom: 20px;
+		color: $title;
+		text-transform: none;
+	}
+	.comment-add__name{
+		margin-right: 30px;
+	}
+	.contact__form-text{
+		width: 100%;
+		border: none;
+		height: 60px;
+		padding: 0 25px;
+		margin-bottom: 40px;
+	}
+	.comment-add__textarea{
+		margin-bottom: 15px;
+	}
+}
+#map {
+  height: 450px;
+  width: 100%;
 }
 @import 'media';
