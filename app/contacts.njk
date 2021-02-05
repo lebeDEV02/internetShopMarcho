@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/contacts.min.css">
+</head>
+<body>
+{% include 'app/modules/_header/_header.html' %}
+	
+	<main class="main">
+		{% include 'app/modules/_top/_top.html' %}
+		<section class="map">
+			<div class="container">
+
+				<div id="map"></div>
+			</div>
+		</section>
+		<section class="contact">
+			<div class="container">
+				<div class="contact__inner">
+					<div class="contact__info">
+						<h3 class="contact__info-title">
+							Feel Free Don’t
+							Hesitate To
+							Contact With Us
+						</h3>
+						<p class="contact__info-text">
+							Lorem ipsum dolor sit amet, consectetur adingn elit, sed do eiusmod tempor incididunt ut labore et
+							dolore magna aliqua.
+							Quis ipsum suspendisse ultrices gravida. Risus commodo maecnaacnrao cumsan lacus vel facilisis.
+						</p>
+						<ul class="contact__info-list">
+							<li class="contact__info-item">
+								<a class="contact__info-phone" href="tel:+01234567896">+0-123-456-7896</a>
+								<a class="contact__info-phone" href="tel:+01234567896">+0-123-456-7896</a>
+							</li>
+							<li class="contact__info-item contact__info-item--location">
+								Ranlon Market 789 Road, <br>
+								Market Street, Newyork
+							</li>
+							<li class="contact__info-item contact__info-item--mail">
+								<span>yourmailaddress@gmail.com</span>
+								<span>companymail@gmail.com</span>
+							</li>
+						</ul>
+					</div>
+					<form class="comment-add contact__form" action="#">
+						<h6 class="blog-one__form-title">Contact Form</h6>
+						<div class="comment-add__inputs">
+							<input type="text" class="comment-add__name" placeholder="Your name" required>
+							<input type="email" class="comment-add__email" placeholder="Your E-mail Address" required>
+						</div>
+						<input type="text" class="contact__form-text" placeholder="Subject" required>
+						<textarea class="comment-add__textarea" placeholder="Message here" required></textarea>
+						<button class="comment-add__button" type="submit">Send message</button>
+					</form>
+				</div>
+			</div>
+		</section>
+	</main>
+	{% include 'app/modules/_footer/_footer.html' %}
+</body>
+<script src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&libraries=&v=weekly" defer></script>
+<script>
+	let map;
+
+	function initMap() {
+		map = new google.maps.Map(document.getElementById("map"), {
+			center: { lat: 40.69896520533779, lng: -74.04835260935583 },
+			zoom: 13,
+			styles: [
+				{
+					"featureType": "all",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"visibility": "simplified"
+						}
+					]
+				},
+				{
+					"featureType": "administrative",
+					"elementType": "all",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "administrative",
+					"elementType": "labels",
+					"stylers": [
+						{
+							"visibility": "simplified"
+						},
+						{
+							"color": "#a31645"
+						}
+					]
+				},
+				{
+					"featureType": "landscape",
+					"elementType": "all",
+					"stylers": [
+						{
+							"weight": "3.79"
+						},
+						{
+							"visibility": "on"
+						},
+						{
+							"color": "#ffecf0"
+						}
+					]
+				},
+				{
+					"featureType": "landscape",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"visibility": "on"
+						}
+					]
+				},
+				{
+					"featureType": "landscape",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"visibility": "on"
+						}
+					]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "all",
+					"stylers": [
+						{
+							"visibility": "simplified"
+						},
+						{
+							"color": "#a31645"
+						}
+					]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"saturation": "0"
+						},
+						{
+							"lightness": "0"
+						},
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "poi",
+					"elementType": "geometry.stroke",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "poi.business",
+					"elementType": "all",
+					"stylers": [
+						{
+							"visibility": "simplified"
+						},
+						{
+							"color": "#d89ca8"
+						}
+					]
+				},
+				{
+					"featureType": "poi.business",
+					"elementType": "geometry",
+					"stylers": [
+						{
+							"visibility": "on"
+						}
+					]
+				},
+				{
+					"featureType": "poi.business",
+					"elementType": "geometry.fill",
+					"stylers": [
+						{
+							"visibility": "on"
+						},
+						{
+							"saturation": "0"
+						}
+					]
+				},
+				{
+					"featureType": "poi.business",
+					"elementType": "labels",
+					"stylers": [
+						{
+							"color": "#a31645"
+						}
+					]
+				},
+				{
+					"featureType": "poi.business",
+					"elementType": "labels.icon",
+					"stylers": [
+						{
+							"visibility": "simplified"
+						},
+						{
+							"lightness": "84"
+						}
+					]
+				},
+				{
+					"featureType": "road",
+					"elementType": "all",
+					"stylers": [
+						{
+							"saturation": -100
+						},
+						{
+							"lightness": 45
+						}
+					]
+				},
+				{
+					"featureType": "road.highway",
+					"elementType": "all",
+					"stylers": [
+						{
+							"visibility": "simplified"
+						}
+					]
+				},
+				{
+					"featureType": "road.arterial",
+					"elementType": "labels.icon",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "transit",
+					"elementType": "all",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "water",
+					"elementType": "all",
+					"stylers": [
+						{
+							"color": "#d89ca8"
+						},
+						{
+							"visibility": "on"
+						}
+					]
+				},
+				{
+					"featureType": "water",
+					"elementType": "geometry.fill",
+					"stylers": [
+						{
+							"visibility": "on"
+						},
+						{
+							"color": "#fedce3"
+						}
+					]
+				},
+				{
+					"featureType": "water",
+					"elementType": "labels",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				}
+			]
+		});
+	}
+</script>
+<script src="js/main.min.js"></script>
+
+</html>
