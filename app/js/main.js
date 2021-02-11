@@ -40,13 +40,25 @@ $(function () {
 		asNavFor: '.product-slide__thumb',
 		draggable: false,
 		arrows: false,
-
+		responsive: [
+			{
+				breakpoint: 1051,
+				settings: {
+					draggable: true
+				}
+			},
+		]
 	});
+	$('.shop__filter-btn').on('click', function () {
+		$('.shop__filters').slideToggle();
+	})
 	$('.button-list').on('click', function () {
 		$('.product-item').addClass('product-item--list');
+		$('.shop-content__inner').addClass('shop-content--nogrid');
 	});
 	$('.button-grid').on('click', function () {
 		$('.product-item').removeClass('product-item--list');
+		$('.shop-content__inner').removeClass('shop-content--nogrid');
 	});
 	$('.shop-content__filter-btn').on('click', function () {
 		$('.shop-content__filter-btn').removeClass('shop-content__filter-btn--active');
